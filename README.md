@@ -2,7 +2,7 @@
 
 **Sistema Integral de Gestión Médica**
 
-MediConnect es una plataforma web completa para la gestión de clínicas médicas que facilita la administración de citas, historiales médicos, pagos y comunicación en tiempo real entre pacientes, doctores y personal administrativo.
+MediConnect es una plataforma web completa para la gestión de una clínica médica que facilita la administración de citas, historiales médicos, pagos y comunicación en tiempo real entre pacientes, doctores y personal administrativo.
 
 ---
 
@@ -11,10 +11,10 @@ MediConnect es una plataforma web completa para la gestión de clínicas médica
 Este proyecto está diseñado para digitalizar y optimizar la gestión de una clínica médica, proporcionando herramientas tanto para el personal médico como para los pacientes. La aplicación permite:
 
 - 📅 **Gestión de Turnos**: Reserva, confirmación y seguimiento de citas médicas
-- 👥 **Administración de Usuarios**: Pacientes, doctores, recepcionistas y administradores
+- 👥 **Administración de Usuarios**: Pacientes, doctores, y recepcionistas
 - 📊 **Historiales Médicos**: Registro completo de consultas, diagnósticos y tratamientos
 - 💳 **Sistema de Pagos**: Gestión de facturación y múltiples métodos de pago
-- 💬 **Chat en Tiempo Real**: Comunicación instantánea con soporte
+- 💬 **Chat en Tiempo Real**: Comunicación instantánea con recepción
 - 📈 **Estadísticas y Reportes**: Análisis de rendimiento y ocupación de la clínica
 
 ---
@@ -62,9 +62,8 @@ MediConnect/
 - ✅ Creación y edición de historiales médicos
 - ✅ Listado de pacientes atendidos
 - ✅ Carga de documentos médicos (estudios, recetas)
-- ✅ Estadísticas de rendimiento
 
-### Para Administradores
+### Para Administradores/Recepcionistas
 - ✅ Dashboard con métricas generales
 - ✅ Gestión completa de usuarios (pacientes, doctores, staff)
 - ✅ Control de todas las citas médicas
@@ -194,32 +193,6 @@ Para información más específica sobre cada parte del proyecto:
 
 ---
 
-## 🧪 Testing
-
-### Backend
-```bash
-cd back
-
-# Tests unitarios
-npm run test
-
-# Tests con coverage
-npm run test:cov
-
-# Tests e2e
-npm run test:e2e
-```
-
-### Frontend
-```bash
-cd front
-
-# Linting
-npm run lint
-```
-
----
-
 ## 🚢 Deployment
 
 ### Backend
@@ -245,7 +218,6 @@ npm run start
 | **Paciente** | Ver/crear turnos propios, ver historial médico personal, chat con soporte |
 | **Doctor** | Gestionar agenda, crear historiales médicos, ver pacientes asignados |
 | **Recepcionista** | Gestionar turnos de todos, ver pacientes y doctores, chat soporte |
-| **Administrador** | Acceso completo a todas las funcionalidades |
 
 ---
 
@@ -258,34 +230,3 @@ npm run start
 - Validación de datos con DTOs y Zod
 - CORS configurado para frontend específico
 - Tokens temporales para reset de contraseña
-
----
-
-## 📞 Soporte
-
-Para preguntas, sugerencias o reportar problemas:
-- Email: soporte@mediconnect.com
-- Issues: [GitHub Issues](https://github.com/tu-usuario/MediConnect/issues)
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la licencia MIT.
-
----
-
-## 👨‍💻 Autor
-
-Desarrollado con ❤️ para mejorar la gestión de clínicas médicas y la experiencia de pacientes y profesionales de la salud.
-
----
-
-## 🗺️ Roadmap
-
-- [ ] Integración con sistemas de obra social
-- [ ] Videoconsultas integradas
-- [ ] App móvil (React Native)
-- [ ] Notificaciones push
-- [ ] Integración con laboratorios externos
-- [ ] Sistema de recordatorios automáticos por SMS
