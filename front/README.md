@@ -1,12 +1,12 @@
 # MediConnect - Frontend Web 🌐
 
-Aplicación web moderna para gestión de clínicas médicas desarrollada con **Next.js**, **React**, **TypeScript** y **Tailwind CSS**.
+Aplicación web moderna para gestión de clínica médica desarrollada con **Next.js**, **React**, **TypeScript** y **Tailwind CSS**.
 
 ---
 
 ## 📋 Descripción
 
-El frontend de MediConnect es una aplicación web responsive y moderna que proporciona interfaces intuitivas para:
+El frontend de MediConnect es una aplicación web moderna que proporciona interfaces intuitivas para:
 
 - **Pacientes**: Reservar turnos, ver historial médico, chatear con soporte
 - **Médicos**: Gestionar agenda, atender pacientes, crear historiales médicos
@@ -183,7 +183,7 @@ interface User {
 5. Se redirige según rol:
    - `patient` → `/dashboard/patient`
    - `doctor` → `/dashboard/doctor`
-   - `admin` o `receptionist` → `/dashboard/admin`
+   - `admin` → `/dashboard/admin`
 6. Todas las peticiones incluyen token en header `Authorization: Bearer <token>`
 
 ### Protección de Rutas
@@ -216,7 +216,6 @@ interface User {
 
 #### Funcionalidades:
 
-- ✅ Ver estadísticas: turnos totales, próximos, historial
 - ✅ Reservar nuevo turno:
   - Seleccionar médico por especialidad
   - Calendario interactivo con disponibilidad
@@ -224,7 +223,7 @@ interface User {
   - Tipo de consulta (presencial/online)
   - Motivo de consulta
 - ✅ Ver historial de turnos (próximos y pasados)
-- ✅ Cancelar turnos con razón
+- ✅ Cancelar turnos
 - ✅ Acceder a historial médico completo
 - ✅ Chat en vivo con recepción
 
@@ -438,30 +437,6 @@ Todos los estilos se manejan con **Tailwind CSS 4**:
 </div>
 ```
 
-### Tema Claro/Oscuro
-
-Implementado con **next-themes**:
-
-```tsx
-import { useTheme } from 'next-themes';
-
-const { theme, setTheme } = useTheme();
-
-<Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-  Toggle Theme
-</Button>
-```
-
-### Responsive Design
-
-Todas las páginas son completamente responsive:
-
-```tsx
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  {/* Cards adaptativos */}
-</div>
-```
-
 ---
 
 ## 🚀 Instalación y Configuración
@@ -479,13 +454,13 @@ npm install
 
 ### 2. Variables de Entorno
 
-Crear archivo `.env.local` en la raíz:
+Crear archivo `.env` en la raíz:
 
 ```env
 # URL del backend
 NEXT_PUBLIC_API_URL=http://localhost:3000/api
 
-# WebSocket URL (opcional, si difiere del API)
+# WebSocket URL
 NEXT_PUBLIC_WS_URL=http://localhost:3000
 ```
 
@@ -519,77 +494,11 @@ npm run start
 
 ---
 
-## 🔄 Flujos de Usuario Principales
-
-### Flujo de Reserva de Turno (Paciente)
-
-```
-1. Login en /login
-2. Navegar a /dashboard/patient/appointments/new
-3. Seleccionar médico del dropdown
-4. Elegir fecha en calendario (muestra disponibilidad)
-5. Seleccionar horario disponible
-6. Elegir tipo: presencial/online
-7. Escribir motivo de consulta
-8. Confirmar → POST a /api/appointments
-9. Redirige a /dashboard/patient/appointments
-10. Ver turno en lista de próximos turnos
-```
-
-### Flujo de Gestión de Disponibilidad (Doctor)
-
-```
-1. Login como doctor
-2. Navegar a /dashboard/doctor/availability
-3. Configurar horarios por día de la semana:
-   - Lunes: 09:00 - 17:00
-   - Martes: 14:00 - 20:00
-   - etc.
-4. Definir duración de slots (ej: 30 minutos)
-5. Guardar → POST a /api/appointments/availability
-6. Sistema calcula slots automáticamente
-```
-
-### Flujo de Creación de Historial Médico (Doctor)
-
-```
-1. Completar cita con paciente
-2. Navegar a /dashboard/doctor/records/new
-3. Llenar formulario:
-   - Seleccionar paciente
-   - Motivo de consulta
-   - Diagnóstico
-   - Tratamiento
-   - Signos vitales
-   - Medicamentos
-   - Notas
-4. Cargar archivos (opcional):
-   - Estudios de laboratorio
-   - Recetas
-   - Imágenes radiológicas
-5. Guardar → POST a /api/medical-records
-```
-
-### Flujo de Chat (Paciente)
-
-```
-1. Navegar a /dashboard/patient/chat
-2. Escribir mensaje inicial
-3. Click en "Iniciar Chat"
-4. WebSocket se conecta
-5. Se crea sala con ID único
-6. Mensajes en tiempo real
-7. Recepcionista ve chat en /dashboard/admin/chat
-8. Conversación en vivo hasta resolución
-```
-
----
-
 ## 📡 Integración con API
 
 ### Cliente HTTP (Axios)
 
-Configuración en `/lib/api.ts`:
+Configuración en `/lib/axios.ts`:
 
 ```typescript
 import axios from 'axios';
@@ -744,21 +653,3 @@ curl http://localhost:3000/api/health
 # Verificar que usuario esté autenticado
 # Verificar que token sea válido
 ```
-
----
-
-## 📞 Contacto y Soporte
-
-Para preguntas o problemas:
-- Email: frontend@mediconnect.com
-- GitHub Issues: [Reportar problema](https://github.com/tu-usuario/MediConnect/issues)
-
----
-
-## 📄 Licencia
-
-MIT License - Ver archivo LICENSE para más detalles.
-
----
-
-**Desarrollado con ❤️ usando Next.js + React**
