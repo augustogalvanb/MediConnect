@@ -1,6 +1,6 @@
 # MediConnect - Backend API 🚀
 
-API REST completa para sistema de gestión de clínicas médicas desarrollada con **NestJS**, **MongoDB** y **TypeScript**.
+API REST completa para sistema de gestión de clínica médica desarrollada con **NestJS**, **MongoDB** y **TypeScript**.
 
 ---
 
@@ -9,10 +9,10 @@ API REST completa para sistema de gestión de clínicas médicas desarrollada co
 El backend de MediConnect es una API robusta y escalable que proporciona todos los servicios necesarios para la gestión integral de una clínica médica, incluyendo:
 
 - Autenticación y autorización con JWT
-- Gestión de usuarios multi-rol (pacientes, doctores, recepcionistas, administradores)
+- Gestión de usuarios multi-rol (pacientes, doctores, recepcionistas)
 - Sistema completo de citas médicas con disponibilidad dinámica
 - Historiales médicos con carga de documentos
-- Sistema de pagos y facturación
+- Registro de pagos
 - Chat en tiempo real con WebSockets
 - Estadísticas y reportes administrativos
 
@@ -124,8 +124,7 @@ src/
 enum UserRole {
   PATIENT = 'patient',           // Paciente
   DOCTOR = 'doctor',             // Médico
-  RECEPTIONIST = 'receptionist', // Recepcionista
-  ADMIN = 'admin'                // Administrador
+  ADMIN = 'admin'                // Recepcionista
 }
 ```
 
@@ -621,43 +620,6 @@ npm run test:debug
 
 ---
 
-## 📡 API Documentation
-
-Una vez que el servidor esté ejecutándose, la documentación interactiva de Swagger estará disponible en:
-
-```
-http://localhost:3000/api/docs
-```
-
-(Nota: Si Swagger no está configurado, puedes agregarlo instalando `@nestjs/swagger`)
-
----
-
-## 🔄 Flujos de Trabajo Principales
-
-### Flujo de Autenticación
-```
-1. Usuario se registra → POST /api/auth/register
-2. Recibe email de verificación
-3. Verifica email → POST /api/auth/verify-email
-4. Inicia sesión → POST /api/auth/login
-5. Recibe JWT token
-6. Usa token en header: Authorization: Bearer <token>
-```
-
-### Flujo de Cita Médica
-```
-1. Paciente busca médicos → GET /api/users/doctors
-2. Consulta disponibilidad → GET /api/appointments/availability/slots/available
-3. Crea cita → POST /api/appointments
-4. Doctor confirma → POST /api/appointments/:id/confirm
-5. Consulta realizada → POST /api/appointments/:id/complete
-6. Se crea historial médico → POST /api/medical-records
-7. Se registra pago → POST /api/payments
-```
-
----
-
 ## 🛡️ Mejores Prácticas de Seguridad
 
 - ✅ Nunca commitear archivo `.env`
@@ -693,21 +655,3 @@ docker ps | grep mongo
 # Verificar credenciales de Cloudinary en .env
 # Verificar tamaño del archivo (máx 10MB)
 ```
-
----
-
-## 📞 Contacto y Soporte
-
-Para preguntas o problemas:
-- Email: dev@mediconnect.com
-- GitHub Issues: [Reportar problema](https://github.com/tu-usuario/MediConnect/issues)
-
----
-
-## 📄 Licencia
-
-MIT License - Ver archivo LICENSE para más detalles.
-
----
-
-**Desarrollado con ❤️ usando NestJS**
