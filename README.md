@@ -2,7 +2,7 @@
 
 **Sistema Integral de Gestión Médica**
 
-MediConnect es una plataforma web completa para la gestión de una clínica médica que facilita la administración de citas, historiales médicos, pagos y comunicación en tiempo real entre pacientes, doctores y personal administrativo.
+MediConnect es una plataforma web completa para la gestión de una clínica médica que facilita la administración de citas, historiales médicos, pagos y comunicación en tiempo real entre pacientes y personal administrativo.
 
 ---
 
@@ -13,7 +13,7 @@ Este proyecto está diseñado para digitalizar y optimizar la gestión de una cl
 - 📅 **Gestión de Turnos**: Reserva, confirmación y seguimiento de citas médicas
 - 👥 **Administración de Usuarios**: Pacientes, doctores, y recepcionistas
 - 📊 **Historiales Médicos**: Registro completo de consultas, diagnósticos y tratamientos
-- 💳 **Sistema de Pagos**: Gestión de facturación y múltiples métodos de pago
+- 💳 **Registro de Pagos**: Gestión de facturación con múltiples métodos de pago
 - 💬 **Chat en Tiempo Real**: Comunicación instantánea con recepción
 - 📈 **Estadísticas y Reportes**: Análisis de rendimiento y ocupación de la clínica
 
@@ -65,9 +65,9 @@ MediConnect/
 
 ### Para Administradores/Recepcionistas
 - ✅ Dashboard con métricas generales
-- ✅ Gestión completa de usuarios (pacientes, doctores, staff)
+- ✅ Gestión completa de usuarios (pacientes, doctores)
 - ✅ Control de todas las citas médicas
-- ✅ Sistema de pagos y facturación
+- ✅ Sistema de facturación
 - ✅ Centro de soporte por chat
 - ✅ Reportes y estadísticas avanzadas
 
