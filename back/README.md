@@ -164,7 +164,7 @@ interface User {
   password: string;
   phone: string;
   dateOfBirth: Date;
-  gender: 'male' | 'female' | 'other';
+  gender: 'male' | 'female';
 
   // Ubicación
   address: string;
@@ -190,7 +190,7 @@ interface User {
 
 | Método | Endpoint | Descripción | Roles Permitidos |
 |--------|----------|-------------|------------------|
-| GET | `/api/users` | Listar todos los usuarios | ADMIN, RECEPTIONIST |
+| GET | `/api/users` | Listar todos los usuarios | ADMIN |
 | GET | `/api/users/doctors` | Listar médicos | Todos |
 | GET | `/api/users/doctors/specialty/:specialty` | Médicos por especialidad | Todos |
 | GET | `/api/users/me` | Perfil propio | Autenticado |
@@ -254,14 +254,14 @@ interface Appointment {
 
 | Método | Endpoint | Descripción | Roles |
 |--------|----------|-------------|-------|
-| POST | `/api/appointments` | Crear cita | PATIENT, RECEPTIONIST, ADMIN |
+| POST | `/api/appointments` | Crear cita | PATIENT |
 | GET | `/api/appointments` | Listar citas | Según rol |
 | GET | `/api/appointments/:id` | Detalle de cita | Según permisos |
 | GET | `/api/appointments/upcoming` | Próximas citas | Autenticado |
 | GET | `/api/appointments/past` | Citas pasadas | Autenticado |
 | PATCH | `/api/appointments/:id` | Actualizar cita | DOCTOR, ADMIN |
 | POST | `/api/appointments/:id/cancel` | Cancelar cita | Todos |
-| POST | `/api/appointments/:id/confirm` | Confirmar cita | DOCTOR, RECEPTIONIST, ADMIN |
+| POST | `/api/appointments/:id/confirm` | Confirmar cita | DOCTOR, ADMIN |
 | POST | `/api/appointments/:id/complete` | Completar cita | DOCTOR |
 
 ### Disponibilidad de Médicos
