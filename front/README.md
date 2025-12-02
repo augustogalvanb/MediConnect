@@ -168,7 +168,7 @@ interface User {
   email: string;
   firstName: string;
   lastName: string;
-  role: 'patient' | 'doctor' | 'receptionist' | 'admin';
+  role: 'patient' | 'doctor' | 'admin';
   isEmailVerified: boolean;
   avatar?: string;
 }
@@ -281,7 +281,7 @@ interface User {
 | `/dashboard/admin/doctors` | Gestión de médicos |
 | `/dashboard/admin/appointments` | Todas las citas de la clínica |
 | `/dashboard/admin/appointments/[id]` | Detalle de cita |
-| `/dashboard/admin/payments` | Sistema de pagos y facturación |
+| `/dashboard/admin/payments` | Sistema de facturación |
 | `/dashboard/admin/stats` | Estadísticas y reportes avanzados |
 | `/dashboard/admin/chat` | Centro de soporte por chat |
 
@@ -400,7 +400,7 @@ const registerSchema = z.object({
   password: z.string().min(8, "Mínimo 8 caracteres"),
   phone: z.string().min(10, "Teléfono inválido"),
   dateOfBirth: z.date(),
-  gender: z.enum(['male', 'female', 'other']),
+  gender: z.enum(['male', 'female']),
 });
 
 const form = useForm({
